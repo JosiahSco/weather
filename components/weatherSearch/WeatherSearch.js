@@ -45,6 +45,10 @@ export default function WeatherSearch({onSearch}) {
           navigator.geolocation.getCurrentPosition((position) => {
             const { latitude, longitude } = position.coords;
             const weatherData = getWeatherDataWithLatLon(latitude, longitude);
+            if (weatherData === undefined) {
+                alert("Failed to get current location");
+                return;
+            }
             onSearch(weatherData);
           });
         } else {
