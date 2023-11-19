@@ -1,0 +1,169 @@
+.weatherDataMain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 73px;
+}
+
+.currentWeatherCard {
+    background-color: rgba(37, 38, 64, 0.92);
+    backdrop-filter: blur(12px);
+    min-width: 600px;
+    min-height: 250px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.50);
+    animation-name: fadeIn;
+    animation-duration: 1s;
+}
+
+.currentStack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    min-width: 130px;
+}
+
+#showDetails {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #985E6D;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+#location {
+    font-size: 30px;
+}
+
+#currentTemp {
+    font-size: 100px;
+}
+
+#currentIcon {
+    width: 350px;
+    height: 350px;
+    margin: -30px;
+}
+
+#currentWeatherList {
+    list-style: none;
+    margin: 10px;
+}
+
+#currentWeatherList li {
+    font-size: 24px;
+}
+
+#conditions p {
+    text-align: center;
+    font-size: 26px;
+    text-transform: capitalize;
+}
+
+@media only screen and (max-width: 768px) {
+    .currentWeatherCard {
+        min-width: 300px;
+        min-height: 200px;
+        margin-top: 50px;
+    }
+
+    #currentIcon {
+        width: 350px;
+        height: 350px;
+        margin-bottom: -50px;
+        margin-top: -50px;
+    } 
+}
+
+.forecast {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.day {
+    background-color: rgba(37, 38, 64, 0.92);
+    backdrop-filter: blur(12px);
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.50);
+    border-radius: 12px;
+    min-width: 250px;
+    height: 250px;
+    margin: 20px;
+}
+
+.day p {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 10px;
+}
+
+.dayForecastData {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dayForecastData img {
+    margin: -40px;
+    width: 225px;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .day {
+        min-width: 350px;
+    }
+}
+
+.day {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+#day1 {
+    animation-delay: 0.33s
+}
+
+#day2 {
+    animation-delay: 0.66s;
+}
+
+#day3 {
+    animation-delay: 1s;
+}
+
+#day4 {
+    animation-delay: 1.33s;
+}
+
+#day5 {
+    animation-delay: 1.66s;
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    
+    to {
+      opacity: 1;
+    }
+}
+
+
