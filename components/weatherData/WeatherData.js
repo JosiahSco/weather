@@ -119,12 +119,20 @@ const WeatherData = ({ weatherData }) => {
                 // display clear
                 img.src = "/publicWIMBY/graphics/1530392_weather_sun_sunny_temperature_icon.svg";
             }
+
+            // If already exists, remove before appending new elements
+            if (days[i].querySelector('.dayForecastData img') != undefined) {
+                days[i].removeChild(days[i].querySelector('.dayForecastData img'));
+                days[i].removeChild(days[i].querySelector('.dayForecastData p'));
+
+            }
+            // days[i].removeChild(days[i].querySelector('.dayForecastData p'));
             days[i].appendChild(img);
             const p = document.createElement('p');
             p.innerHTML = `${low}°F - ${high}°F`;
             days[i].appendChild(p);
         }
-    }, []);
+    }, [weatherData]);
 
     useEffect(() => {
         let high = currentData.main.temp_max;

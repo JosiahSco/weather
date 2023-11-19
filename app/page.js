@@ -44,8 +44,13 @@ export default function Weather() {
 
             {showSearchBar ? (
                 <WeatherSearch onSearch={handleWeatherData} className='wetha'/>
-            ) : (
-                <WeatherData weatherData={weatherData} className='wetha'/>
+                ) : (
+                    <div className='data'>
+                        <div className='secondarySearch'>
+                            <WeatherSearch onSearch={handleWeatherData} className='wetha'/>
+                        </div>
+                            <WeatherData weatherData={weatherData}/>
+                    </div>
             )}
         </main>
     )
