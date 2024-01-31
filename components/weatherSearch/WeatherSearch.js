@@ -23,20 +23,21 @@ export default function WeatherSearch({onSearch}) {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(locationString)
-            })
+            });
+
             const weatherData = await response.json();
             if (weatherData.responseCode != 200) {
                 if (weatherData.responseCode == 400) {
                     alert("Incorrect Input: use only city name OR zip code");
                     return;
-                }  else {
+                } else if (weatherData.responseCode >= 500) {
                     alert("Could not retrieve weather data with given search");
                     return;
                 }
             }
             onSearch(weatherData);
         } catch (error) {
-            console.error("Error:", error);
+            console.error("Error: an error occurred while trying to fetch weather data");
         }
     }
 
