@@ -29,7 +29,7 @@ export default function WeatherSearch({onSearch}) {
                 if (weatherData.responseCode == 400) {
                     alert("Incorrect Input: use only city name OR zip code");
                     return;
-                }  else if (weatherData.responseCode == 500) {
+                }  else {
                     alert("Could not retrieve weather data with given search");
                     return;
                 }
@@ -58,9 +58,6 @@ export default function WeatherSearch({onSearch}) {
     
     return (
         <main className="main">
-            {/* <div className="cloudContainer">
-               <div className="cloudIntro"></div>
-            </div> */}
             <div className="searchContainer">
                 <form onSubmit={handleFormSubmit} className='searchForm'>
                     <input onChange={handleLocationChange} id="searchInput" type="text"  value={locationString} placeholder="Enter Location (City Name OR Zip Code)" minLength={3}></input>
